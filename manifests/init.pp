@@ -7,23 +7,20 @@
 # @param month    Cron month
 # @param weekday  Cron weekday
 #
-# @param syslog
-#   Enable syslog log forwarding
+# @param syslog   Enable syslog log forwarding
 #
-# @param log_dest
-#   Set to local6.notice, any other syslog destination to forward to syslog.
-#   Worthless if $syslog is false.
+# @param log_dest Set to local6.notice, any other syslog destination to forward to syslog.
 #
 # @author Trevor Vaughan <tvaughan@onyxpoint.com>
 #
 class chkrootkit (
-  Boolean $syslog  = lookup('simp_options::syslog', { 'default_value' => false }),
-  String $log_dest = 'local6.notice',
-  String $minute   = '0',
-  String $hour     = '0',
-  String $monthday = '*',
-  String $month    = '*',
-  String $weekday  = '0'
+  String  $minute   = '0',
+  String  $hour     = '0',
+  String  $monthday = '*',
+  String  $month    = '*',
+  String  $weekday  = '0',
+  Boolean $syslog   = 'false' 
+  String  $log_dest = 'local6.notice',
 ) {
 
   if $syslog {
