@@ -19,7 +19,7 @@ class chkrootkit (
   String  $monthday = '*',
   String  $month    = '*',
   String  $weekday  = '0',
-  Boolean $syslog   = 'false' 
+  Boolean $syslog   = 'false', 
   String  $log_dest = 'local6.notice',
 ) {
 
